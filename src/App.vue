@@ -1,5 +1,6 @@
 // @ts-nocheck
-<script setup>
+<script setup>// @ts-nocheck
+
 
 import {ref} from 'vue'
 
@@ -29,6 +30,7 @@ const addNote = () => {
 
   showModal.value = false
   newNote.value = ("")
+  errorMessage.value = ("")
   console.log(addNote)
 }
 
@@ -63,15 +65,26 @@ const addNote = () => {
       </div>
     </div>
   </main>
+  <fonter>
+    <p class="footerText">Created by CaddyKhaw</p>
+  </fonter>
 </template>
 
 <style scoped>
   main {
     width: 100vw;
-    height: 100vh;
+    min-height: 90vh;
     background-color: aliceblue;
   }
+  footer {
+    height: 10vh;
+  }
 
+  .footerText {
+    font-size: 12.5;
+    font-weight: bold;
+    text-align: center;
+  }
   .container {
     max-width: 1200px;
     padding: 10px;
@@ -87,6 +100,7 @@ const addNote = () => {
   h1 {
     font-weight: bold;
     font-size: 75px;
+    margin-top: 0px !important;
     margin-bottom: 25px;
     color: black;
   }
@@ -97,7 +111,7 @@ const addNote = () => {
     border: none;
     background-color: black;
     color: white;
-    padding: 10px;
+    
     border-radius: 100%;
     cursor: pointer;
   }
